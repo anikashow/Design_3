@@ -54,8 +54,8 @@ void prompt2(const string &currentFate) {
                 break;
             } else if (input == "flee") {
                 cout << "You stand up, throw your lawn chair at the table and run. Everything moves in slow motion. Your feet become heavy. "
-                     << "You feel yourself drift off... You ran off the edge of the subconscious world and reality as you know it"
-                      << "has bmelted. You die. \n";
+                     << "You feel yourself drift off... You ran off the edge of the subconscious world and reality as you know it has melted. "
+                     << "You die.\n";
                 break;
             } else {
                 cout << "Invalid input! Please choose between remember or flee.\n";
@@ -64,9 +64,7 @@ void prompt2(const string &currentFate) {
     } else if (currentFate == "death") {
         cout << "You are becoming more unsettled. The commissioners craft and hand you a document to sign. Your hand raises against your "
              << "will and drags a pen across the dotted line, as if guided by something supernatural. You lost the game.\n";
-    } else {
-        cout << "You are in an unknown area. Please make a valid decision.\n";
-    }
+ 
 }
 
 void prompt3(const string &currentFate) {
@@ -74,25 +72,23 @@ void prompt3(const string &currentFate) {
 
     if (currentFate == "peace") {
         cout << "Nancy leans over and kisses you on the forehead, and then asks if you are ready to wake up. \n";
-         cout << "Are you ready? (yes or no): ";
- while (true) {
+        cout << "Are you ready? (yes or no): ";
+        
+        while (true) {
             getline(cin, input);
 
             if (input == "yes") {
-                cout << "You have chosen to awaken from blissful disacociative slumber and will now be forced to continue to endure"
-                     << "the existentially complex and tormentful experience that is humantiy searching for the true moral good. \n";
+                cout << "You have chosen to awaken from blissful dissociative slumber and will now be forced to continue to endure "
+                     << "the existentially complex and tormentful experience that is humanity searching for the true moral good. \n";
                 break;
             } else if (input == "no") {
                 cout << "Your eyelids become heavy. You feel yourself drift into peaceful slumber. Nothingness. No dark, no light. "
                      << "Nothing is, and yet everything is. Nothing and something are asynchronous. You have chosen Nirvana.\n";
                 break;
             } else {
-                cout << "Invalid input! You must chose between the fate of slumber and whatever waits in wake.\n";
+                cout << "Invalid input! You must choose between the fate of slumber and whatever waits in wake.\n";
             }
-        }
-    } else {
-        cout << "The adventure continues...\n";
-    }
+  
 }
 
 int main() {
@@ -108,13 +104,13 @@ int main() {
         // Prompt 1: The user chooses a direction
         prompt1(currentFate);
 
-        
+        // Prompt 2: The user’s next action depends on their location
         prompt2(currentFate);
 
         // Prompt 3: Additional storyline progression
         prompt3(currentFate);
 
-        cout << "Congratulations! You've completed the adventure!\n";
+        cout << "Game Over\n";
     } else {
         cout << "Maybe next time! Goodbye!\n";
     }

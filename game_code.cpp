@@ -13,13 +13,13 @@ int main() {
     if (startInput == "yes") {
         string currentFate = "";
 
-        // Prompt 1: The user chooses a direction
+        
         prompt1(currentFate);
 
-        // Prompt 2: The user’s next action depends on their location
+        
         prompt2(currentFate);
 
-        // Prompt 3: Additional storyline progression
+        
         prompt3(currentFate);
 
         cout << "Game Over\n";
@@ -54,7 +54,7 @@ void prompt1(string &currentFate) {
         } else if (input == "Wednesday") {
             cout << "Yeah, I wish it was Wednesday. The commissioners look at each other, and a slow smile creeps across their faces. "
                  << "Pat laughs, and tells you it's time to pay the piper.\n";
-            currentFate = "death";  // Finding treasure
+            currentFate = "death"; 
             break;
         } else {
             cout << "Invalid input! Please check your spelling, and remember you can only enter one of the days listed. "
@@ -118,6 +118,7 @@ void prompt3(const string &currentFate) {
         }
     }
 }
+
 
 
 

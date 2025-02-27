@@ -5,43 +5,48 @@ using namespace std;
 
 void prompt1(string &currentLocation) {
     string input;
-    cout << "You find yourself at a crossroads in a dark forest.\n";
-    cout << "Where would you like to go? (north, south, east, west): ";
+    cout << "You find yourself in a lawn chair at a folding table, sitting across from your Benton county comissioners: Nancy Wyse, Pat Malone, and Gabe Sheperd. 
+        The light is dim. You cannot remember how you got there. Can you guess what day of the week it is? Choose carefully. The comissioners are listening.\n";
+    cout << "What day of the week is it? For better odds, we have narrowed it down to four options for you: (Monday, Tuesday, Wednesday, Friday): ";
     
     while (true) {
         getline(cin, input);
 
-        if (input == "north" || input == "south") {
-            cout << "You walk " << input << " and find a peaceful area. Nothing else happens.\n";
-            currentLocation = "other";  // A generic location
+        if (input == "Monday" || input == "Friday") {
+            cout << "Oh... you think it's " << input << "?... You chose incorrectly, BUT luckily for you, Nancy has a sweet spot for " <<input<< ". Nothing else happens.\n";
+            currentFate = "peace";  // A generic location
             break;
-        } else if (input == "east") {
-            cout << "You walk east and enter a dark cave...\n";
-            currentLocation = "cave";  // Going to the cave with the dragon
+        } else if (input == "Tuesday") {
+            cout << "Congratulations, you guessed the correct day of the week! Unfortunately, the commisioners have begun to suspect that you know too much. 
+                The room appears less dim, and you catch a whiff of what smells like exhaust...\n";
+            currentFate = "truth";  // Going to the cave with the dragon
             break;
-        } else if (input == "west") {
-            cout << "You walk west and discover a treasure chest! You win!\n";
-            currentLocation = "treasure";  // Finding treasure
+        } else if (input == "Wednesday") {
+            cout << "Yeah, I wish it was Wednesday. The comissioners look at eachother, and a slow smile creeps across their faces. 
+                Pat laughs, and tells you it's time to pay the piper.\n";
+            currentFate = "death";  // Finding treasure
             break;
         } else {
-            cout << "Invalid input! Please choose between north, south, east, or west.\n";
+            cout << "Invalid input! Please check your spelling, and remember you can only enter one of the days listed. May the odds forever be in your favor.\n";
         }
     }
 }
 
-void prompt2(const string &currentLocation) {
+void prompt2(const string &currentFate) {
     string input;
 
-    if (currentLocation == "cave") {
-        // If the user entered the cave
-        cout << "You've entered the cave and are face-to-face with a dragon!\n";
-        cout << "Do you want to fight or flee? (fight, flee): ";
+    if (currentFate == "truth") 
+       
+        cout << "The commisioners pull out their weapons.\n";
+        cout << "Do you try to remember where you are, or flee from the room? (remember, flee): ";
 
         while (true) {
             getline(cin, input);
 
-            if (input == "fight") {
-                cout << "You courageously fight the dragon, but alas, it was too powerful. Game over.\n";
+            if (input == "remember") {
+                cout << "You take in the smell of exhaust, the lawn chairs and the ever-brightening room, and suddenly wake up. You are on the ground at a gas station.
+                    You passed out from inhaling too many fumes. A newspaper is scattered on the ground next to a toppled lawn chair. Election results just in.
+                    Maybe you should find somewhere else to take your break. You quit your job at Chevron. Game over.\n";
                 break;
             } else if (input == "flee") {
                 cout << "You flee from the dragon and safely exit the cave. You live to fight another day.\n";

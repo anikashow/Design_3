@@ -91,7 +91,7 @@ void prompt2(const string &currentFate) {
     } else if (currentFate == "death") {
         cout << "You are becoming more unsettled. The commissioners craft and hand you a document to sign. Your hand raises against your "
              << "will and drags a pen across the dotted line, as if guided by something supernatural. You lost the game.\n";
- 
+    }
 }
 
 void prompt3(const string &currentFate) {
@@ -115,7 +115,9 @@ void prompt3(const string &currentFate) {
             } else {
                 cout << "Invalid input! You must choose between the fate of slumber and whatever waits in wake.\n";
             }
-  
+        }
+    }
 }
+
 
 

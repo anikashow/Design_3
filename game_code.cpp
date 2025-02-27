@@ -14,12 +14,12 @@ void prompt1(string &currentLocation) {
 
         if (input == "Monday" || input == "Friday") {
             cout << "Oh... you think it's " << input << "?... You chose incorrectly, BUT luckily for you, Nancy has a sweet spot for " <<input<< ". Nothing else happens.\n";
-            currentFate = "peace";  // A generic location
+            currentFate = "peace";  
             break;
         } else if (input == "Tuesday") {
             cout << "Congratulations, you guessed the correct day of the week! Unfortunately, the commisioners have begun to suspect that you know too much. 
                 The room appears less dim, and you catch a whiff of what smells like exhaust...\n";
-            currentFate = "truth";  // Going to the cave with the dragon
+            currentFate = "truth";  
             break;
         } else if (input == "Wednesday") {
             cout << "Yeah, I wish it was Wednesday. The comissioners look at eachother, and a slow smile creeps across their faces. 
@@ -49,15 +49,16 @@ void prompt2(const string &currentFate) {
                     Maybe you should find somewhere else to take your break. You quit your job at Chevron. Game over.\n";
                 break;
             } else if (input == "flee") {
-                cout << "You flee from the dragon and safely exit the cave. You live to fight another day.\n";
+                cout << "You stand up, throw your lawn chair at the table and run. Everything moves in slow motion. Your feet become heavy. You feel yourself drift off...\n";
                 break;
             } else {
-                cout << "Invalid input! Please choose between fight or flee.\n";
+                cout << "Invalid input! Please choose between remember or flee.\n";
             }
         }
-    } else if (currentLocation == "treasure") {
-        // If the user found the treasure
-        cout << "You have already found the treasure chest and won! Congratulations!\n";
+    } else if (currentFate == "death") {
+       
+        cout << "You are becoming moe unsettled. The comissioners craft and had you a document to sign. Your hand raises against your will and drags a pen across 
+            the dotted line, as if guided by something supernatural. You lost the game.\n";
     } else {
         cout << "You are in an unknown area. Please make a valid decision.\n";
     }
@@ -76,23 +77,23 @@ void prompt3(const string &currentLocation) {
 }
 
 int main() {
-    cout << "Welcome to the Adventure Game!\n";
+    cout << "Welcome.\n";
     string startInput;
 
-    cout << "Do you want to start the adventure? (yes or no): ";
+    cout << "Would you like to begin? (yes or no): ";
     getline(cin, startInput);
 
     if (startInput == "yes") {
-        string currentLocation = "";
+        string currentFate = "";
 
         // Prompt 1: The user chooses a direction
-        prompt1(currentLocation);
+        prompt1(currentFate);
 
         // Prompt 2: The user’s next action depends on their location
-        prompt2(currentLocation);
+        prompt2(currentFate);
 
         // Prompt 3: Additional storyline progression
-        prompt3(currentLocation);
+        prompt3(currentFate);
         cout << "Congratulations! You've completed the adventure!\n";
     } else {
         cout << "Maybe next time! Goodbye!\n";

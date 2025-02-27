@@ -3,6 +3,33 @@
 
 using namespace std;
 
+int main() {
+    cout << "Welcome.\n";
+    string startInput;
+
+    cout << "Would you like to begin the game? (yes or no): ";
+    getline(cin, startInput);
+
+    if (startInput == "yes") {
+        string currentFate = "";
+
+        // Prompt 1: The user chooses a direction
+        prompt1(currentFate);
+
+        // Prompt 2: The user’s next action depends on their location
+        prompt2(currentFate);
+
+        // Prompt 3: Additional storyline progression
+        prompt3(currentFate);
+
+        cout << "Game Over\n";
+    } else {
+        cout << "Maybe next time! Goodbye!\n";
+    }
+
+    return 0;
+}
+
 void prompt1(string &currentFate) {
     string input;
     cout << "You find yourself in a lawn chair at a folding table, sitting across from your Benton county commissioners: "
@@ -91,29 +118,4 @@ void prompt3(const string &currentFate) {
   
 }
 
-int main() {
-    cout << "Welcome.\n";
-    string startInput;
 
-    cout << "Would you like to begin? (yes or no): ";
-    getline(cin, startInput);
-
-    if (startInput == "yes") {
-        string currentFate = "";
-
-        // Prompt 1: The user chooses a direction
-        prompt1(currentFate);
-
-        // Prompt 2: The user’s next action depends on their location
-        prompt2(currentFate);
-
-        // Prompt 3: Additional storyline progression
-        prompt3(currentFate);
-
-        cout << "Game Over\n";
-    } else {
-        cout << "Maybe next time! Goodbye!\n";
-    }
-
-    return 0;
-}
